@@ -1,0 +1,80 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/admin-side-menu.ejs",{activeLink:50}) %>
+
+                <div class="w-100 superadmin-rightsection p-4 p-lg-5">
+                        <div class="mb-4">
+                                <div class="color-000 pagename opensans-bold d-inline-block">
+                                        Users
+                                </div>
+                                
+                        </div>
+                        <div class="table-responsive">
+                                <table class="table table-hover border superadmin-table">
+                                        <thead>
+                                                <tr>
+                                                        <th scope="col" class="agent-bor">S.No.</th>
+                                                        <th scope="col">created Date</th>
+                                                        <th scope="col"> Hospital Zone </th>
+                                                        <th scope="col">Hospital Name</th>
+                                                        
+                                                        <th scope="col">Agent Name</th>
+                                                        <th scope="col">Aarogya Pradhaan Id</th>
+                                                        <th scope="col">User First Name</th>
+                                                        <th scope="col">User Last Name</th>
+                                                        
+                                                        <th scope="col">User Mobile Number</th>
+                                                        <th scope="col">User Email</th>
+                                                        
+                                                        <th scope="col">User Aadhaar Number</th>
+                                                         <th scope="col" class="agent-bor1">view</th>
+                                                </tr>
+                                        </thead>
+
+                                        <tbody>
+                                               
+                                            <% for (var i = 0; i < usersssList.length; i++) { %>
+                                               
+                                                <tr>
+                                                    <td class="mine-radius"><%= i+1; %></td>
+                                                    <td><%= newdate[i];%></td>
+                                                    <td><%= usersssList[i].district; %></td>
+                                                    <td><%= usersssList[i].hospital_name; %></td>
+                                                    <td><%= usersssList[i].agent_name; %></td>
+                                                    <td><%= usersssList[i].card_number; %></td>
+                                                    <td><%= usersssList[i].first_name; %></td>
+                                                    <td><%= usersssList[i].last_name; %></td>
+                                                    <td><%= usersssList[i].mobile_no; %></td>
+                                                    <td><%= usersssList[i].user_email_id; %></td>
+                                                    
+                                                    <td><%= usersssList[i].aadhar_no; %></td>
+                                                    <td class="mine-radius-right">
+                                                        <div class="d-flex align-items-center">
+                                                                    <a
+                                                                            href="/admin/user-page-view/<%= Buffer.from("usersssList="+usersssList[i].user_id).toString('base64')%>"  >
+                                                                            <button class="text-underline-hover">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                                                                      </svg>
+                                                                        </a></button>
+                                                        </div>
+                                                </td>
+                                                    
+                                                </tr>
+
+                                                <% } %>
+                                               
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+
+        </div>
+</div>
+<script>
+        $('.superadmin-table').DataTable();
+</script> 
+

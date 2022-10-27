@@ -1,0 +1,82 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/hospital-side-menu.ejs",{activeLink:103}) %>
+
+                <div class="w-100 superadmin-rightsection p-4 p-lg-5">
+                        <div class="mb-4">
+                                <div class="color-000 pagename opensans-bold d-inline-block">
+                                        Receipts
+                                </div>
+                                
+                        </div>
+                        <div class="table-responsive">
+                                <table class="table table-hover border superadmin-table">
+                                        <thead>
+                                                <tr>
+                                                    <th scope="col" class="agent-bor">S.No.</th>
+                                                    
+                                                    <th scope="col">Arogya Pradhaan ID</th>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Last Name</th>
+                                                    <th scope="col">Mobile Number</th>
+                                                    <th scope="col">Email ID</th>
+                                                    <th scope="col">Zone</th>
+                                                    <th scope="col">Adhaar Number</th>
+                                                   
+                                                    <th scope="col" class="agent-bor1">Receipt</th>
+    
+  
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                               
+                                                <% for (var i = 0; i < userReceiptDetails.length; i++) { %>
+                                                   
+                                                    <tr>
+                                                        <td class="mine-radius"><%= i+1; %></td>
+                                                        
+                                                        <td><%= userReceiptDetails[i].card_number; %></td>
+                                                        <td><%= userReceiptDetails[i].first_name; %></td>
+                                                        
+                                                        <td><%= userReceiptDetails[i].last_name; %></td>
+                                                        <td><%= userReceiptDetails[i].mobile_no; %></td>
+                                                        <td><%= userReceiptDetails[i].user_email_id; %></td>
+                                                        <td><%= userReceiptDetails[i].district; %></td>
+                                                        <td><%= userReceiptDetails[i].aadhar_no; %></td>
+                                                        <td>
+                                                                <div class="d-flex align-items-center">
+                                                                            <a
+                                                                                    href="/hospital/receipt-view-list/<%= Buffer.from("userReceiptDetails="+userReceiptDetails[i].bill_id).toString('base64')%>"  >
+                                                                                    <button class="text-underline-hover">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                                                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                                                                              </svg>
+                                                                                </a> </button>
+                                                                </div>
+                                                        </td>
+                                                         
+                                                       
+                                                       
+                                                       
+                                                    </tr>
+    
+                                                    <% } %>
+                                                   
+                                            </tbody>
+
+                                        
+                                        
+
+                                </table>
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+<script>
+    $('.superadmin-table').DataTable();
+</script>

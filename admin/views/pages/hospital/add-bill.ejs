@@ -1,0 +1,132 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/hospital-side-menu.ejs",{activeLink:102}) %>
+                <div class="w-100 superadmin-rightsection p-5 mob-p">
+                        <div class="color-000 pagename opensans-bold">
+                                <a class="pointer" href="billing"><img src="/static/img/back.png" class="img-fluid">
+                                        Generate  Bill</a>
+                        </div>
+                        <section>
+                              
+                                        
+                                                <div class="row">
+                                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                <div class="mb-4">
+                                                                        <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                                                              </svg>
+                                                                                        <input type="search" class="form-control1" id="arogyaId" placeholder="Search Arogya Pradhan ID"/>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                        <button  id="btn" class="btn1 btn-success">Search</button>
+                                                                                </div>
+                                                                        </div>       
+                                                                </div>
+                                                        </div>       
+                                                </div>
+
+                                                <div class="row">
+                                                        <div class="col-xxl-5 col-xl-12  col-lg-12 col-md-12 col-sm-12">
+                                                                <div class="user-detail">
+                                                                
+                                                                </div>
+                                                </section> 
+
+                                                                
+
+                                                                <div class="text-right test mt-3 d-none">
+                                                                        <button type="button"
+                                                                        class="btn add-btn btn-update"
+                                                                        id="savedata">Generate New Bill</button>
+                                                                </div>
+ 
+
+                                                        </div>
+                                                </div>
+                                        
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+<script>
+        $(document).ready(function () {
+                
+                $("body").on("click", "#btn", function () {
+
+                       
+                        let arogyaIdElement = $("#arogyaId");
+                                let arogyaId = arogyaIdElement.val();
+                                arogyaId = $.trim(arogyaId);
+                                if (arogyaId == "" || arogyaId == null || arogyaId == undefined) {
+                                        messageDisplay("Enter arogya Pradhan Id ");
+                                        return false;
+                                }      
+                                
+                                 
+                        
+                        let formData = new FormData();
+                        formData.append("arogyaId", arogyaId);
+                        
+
+
+                        $.ajax({
+                                type: "POST",
+                                url: '/hospital/generating-bill',
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                        console.log(data);
+                                 
+                                        if(data.response == true && data.user_detail != null) {
+                                               
+                                                $('.user-detail').html(data.user_detail);
+                                                $('.test').removeClass("d-none");
+
+                                        }
+
+                                        if(data.response == false ) {
+                                                $('.user-detail').html('<p class="text-success">No data found</p>');
+                                                $('.test').addClass("d-none");
+
+                                                
+                                        }
+                                        
+                                }
+                               
+                        });
+
+
+                }).on("click","#savedata",function (){
+                        let searchValue = $("#arogyaId").val();
+                        $.trim(searchValue);
+                        if(searchValue == "" || searchValue == undefined || searchValue == null){
+                                messageDisplay("Search required..");
+                                        return false;
+                        }
+
+                        if(searchValue){
+                                window.location.href = "/hospital/card-scan/"+searchValue
+                        }
+                })
+        })
+        
+
+
+</script>
+
+<script>
+        var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+        };
+</script>

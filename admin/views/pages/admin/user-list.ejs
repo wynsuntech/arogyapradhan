@@ -1,0 +1,120 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/admin-side-menu.ejs",{activeLink:1}) %>
+
+                <div class="w-100 superadmin-rightsection p-4 p-lg-5">
+                        <div class="color-000 pagename opensans-bold mb-4">
+                                Users
+                        </div>
+
+                        <div class="table-responsive">
+                                <table class="table table-hover border superadmin-table">
+                                        <thead>
+                                                <tr class="back-color-hospital">
+                                                        <th scope="col" class="sr-num-1">S.No.</th>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Mobile Number</th>
+                                                        <th scope="col">Email Id</th>
+                                                        <th scope="col">Reference Number</th>
+                                                        <th scope="col">Invitation Code</th>
+                                                        <th scope="col" class="sr-num-last">Action</th>
+                                                </tr>
+                                        </thead>
+
+                                        <tbody>
+                                                <% var count = 0;%>
+                                                <% for (var i = 0; i < userList.length; i++) { %>
+                                                <% if(userList[i].name != "" && userList[i].mobile != "" && userList[i].email != "") { %>
+                                                <% count++ %>
+                                                <tr>
+                                                        <td class="mine-radius"><%= count; %></td>
+                                                        <td><%= userList[i].name; %></td>
+                                                        <td><%= userList[i].mobile; %></td>
+                                                        <td><%= userList[i].email; %></td>
+                                                        <td>9948281990</td>
+                                                        <td>54564564</td>
+                                                        <td class="mine-radius-right">
+                                                                <div class="d-flex align-items-center">
+                                                                        <a
+                                                                                href="/admin/edit-cities/<%= Buffer.from("userList="+userList[i].user_id).toString('base64')%>">
+                                                                                <button class="action-btn mr-2">
+                                                                                        <i
+                                                                                                class="fas fa-pencil-alt"></i>
+                                                                                </button></a>
+                                                                        <button class="action-btn delete-city"
+                                                                                data-id="<%= userList[i].user_id; %>">
+                                                                                <i class="fas fa-trash"></i>
+                                                                        </button>
+                                                                </div>
+                                                        </td>
+                                                </tr>
+
+                                                <% } %>
+                                                <% } %>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+
+        </div>
+</div>
+<script>
+        $('.superadmin-table').DataTable();
+</script>
+<div class="modal" id="deleteModal">
+        <div class="modal-dialog">
+                <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                                <h4 class="modal-title">Are You Sure?</h4>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                                Are You Sure You Want to Delete ?
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <button type="button" class="btn btn-danger" id="delete">Yes</button>
+                        </div>
+
+                </div>
+        </div>
+</div>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+                let deleteCategory;
+                $('body').on('click', '.delete-city', function () {
+                        deleteCategory = $(this).data('id');
+                        $("#deleteModal").modal('toggle');
+                }).on('click', '#delete', function () {
+                        let element = $(this);
+                        element.attr("disabled", "disabled").html("Please Wait..");
+                        postData('/admin/delete-city', {
+                                'city_id': deleteCategory
+                        }, function (response) {
+
+                                if (response.success) {
+                                        messageDisplay(response.message,
+                                                2000, "success");
+                                        setTimeout(function () {
+                                                window.location
+                                                        .reload();
+                                        }, 2000);
+                                } else {
+                                        element.attr("disabled", false)
+                                                .html('save');
+                                        messageDisplay(response.message,
+                                                2000);
+                                }
+                        });
+                })
+        })
+</script>

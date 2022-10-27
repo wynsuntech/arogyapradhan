@@ -1,0 +1,132 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/admin-side-menu.ejs",{activeLink:10}) %>
+                <div class="w-100 superadmin-rightsection p-5 mob-p">
+                        <div class="color-000 pagename opensans-bold mb-4">
+                                <a class="pointer" href="districts"><img src="/static/img/back.png" class="img-fluid">
+                                        Add Zone</a>
+                        </div>
+                        <div class="row">
+                                <div class="col-xxl-5 col-xl-6  col-lg-12 col-md-12 col-sm-12">
+                                        <div class="input-boxs">
+                                                <div class="row">
+                                                        <div
+                                                                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-4 mb-lg-0">
+                                                                <div class="mb-4">
+                                                                        <label class="color-333 superadmin-label">
+                                                                                Enter Zone Name
+                                                                        </label>
+                                                                        <div class="">
+                                                                                <input type="text"
+                                                                                        class="form-control superadmin-formcontrol-input-1 rounded"
+                                                                                        id="district"
+                                                                                        placeholder="Enter Zone name">
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="text-right mt-3">
+                                                                        <button type="button"
+                                                                                class="btn add-btn btn-update"
+                                                                                id="savedata">Save</button>
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+<script>
+        $(document).ready(function () {
+            let districtElement='';
+            let district ='';
+                $("body").on("click", "#savedata", function () {
+
+                         districtElement = $("#district");
+                         district = districtElement.val();
+                         district = $.trim(district);
+                        if (district == "" || district == null || district == undefined) {
+                                messageDisplay(" Enter Zone name");
+                                return false;
+                        }
+                      
+
+                        let nameExpr = /^[a-zA-Z ]+$/.test(district);
+                                if (!nameExpr) {
+                                        messageDisplay(" enter valid Zone name", 1500,
+                                                "error");
+                                        $("#district").focus();
+                                        return false;
+                                }
+
+                                if (!district.match('^[a-zA-Z ]{0,1000}$')) {
+                                        messageDisplay(" enter valid Zone name");
+                                        $("#district").focus();
+                                        return false;
+                                }
+
+                        
+                        let formData = new FormData();
+                        formData.append("district", district);
+                       
+
+
+                        $.ajax({
+                                type: "POST",
+                                url: '/admin/add-district',
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                        console.log(data);
+                                        if (data.success ==
+                                                true) {
+                                                messageDisplay(data
+                                                        .message,
+                                                        2000,
+                                                        "success"
+                                                );
+                                                setTimeout(function () {
+                                                                location.href =
+                                                                        "/admin/districts";
+                                                        },
+                                                        2000
+                                                );
+                                        } else {
+                                                // element.attr("disabled",
+                                                //                 false
+                                                //         )
+                                                //         .html(
+                                                //                 'save'
+                                                //         );
+                                                messageDisplay(data
+                                                        .message,
+                                                        2000
+                                                );
+                                        }
+                                },
+                                error: function () {
+                                        messageDisplay(
+                                                "zone name not inserted"
+                                        );
+                                }
+                        });
+
+
+                       
+                }).on('click', '.delete-image', function (e) {
+                        mediaFiles = "";
+                        $("#files-wrapper").addClass("d-none");
+                         $("#files-wrapper").remove().val("");
+                });
+        })
+</script>

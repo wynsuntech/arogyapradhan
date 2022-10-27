@@ -1,0 +1,137 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/admin-side-menu.ejs",{activeLink:50}) %>
+                <div class="w-100 superadmin-rightsection p-5 mob-p">
+                        <div class="color-000 pagename opensans-bold mb-4">
+                                <a class="pointer" href="../usersss"><img src="/static/img/back.png" class="img-fluid">
+                                         User's Details</a>
+                        </div>
+                        <div class="row">
+                                <div class="col-xxl-5 col-xl-12  col-lg-12 col-md-12 col-sm-12">
+                                                <div class="row">
+                                                        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                <div class="shadow-none mb-5 bg-white rounded p-5">
+                                                                        <h1 class="use-detail">User Details</h1>
+                                                                <div class="row">
+                                                                        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                                <label class="color-333  mt-4 bill-head">
+                                                                                        First Name:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                    <p><%=singleUserDetails[0].first_name%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        Last Name:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%=singleUserDetails[0].last_name%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        Mobile Number:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%=singleUserDetails[0].mobile_no%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        Email Id:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%=singleUserDetails[0].user_email_id%></p>    
+                                                                                </div>
+                                                                        </div>
+                                                                                        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        District:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%=singleUserDetails[0].district%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        Aadhar Number:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%=singleUserDetails[0].aadhar_no%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        Aarogya Pradhan Id:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%=singleUserDetails[0].card_number%></p>    
+                                                                                </div>
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        valid upto:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <td><%= newdate[0]; %></td>   
+                                                                                </div>
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                        status:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                                <% if(singleUserDetails[0].offer_utilize == 0){ %>
+                                                                                                        <p style="color:peru"><b>Active</b></p>
+                                                                                                <% } else if(singleUserDetails[0].offer_utilize == 1){ %>  
+                                                                                                        <p style="color:green"><b>offer Utilized</b></p>
+                                                                                                <% } %>
+                                                                                        </td>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                                                     
+                                                <div class="row shadow-none mb-5 bg-white rounded p-5 myside-view">
+                                                        <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-4 mb-lg-0">
+                                                                                <label class="color-333 mt-3 bill-head">
+                                                                                    Agent Name:
+                                                                            </label>
+                                                                            <div class="hide-bor">
+                                                                                    <p><%=singleUserDetails[0].agent_name%></p>    
+                                                                            </div>
+                                                                            <label class="color-333 mt-3 bill-head">
+                                                                                Agent Id:
+                                                                        </label>
+                                                                            <div class="hide-bor">
+                                                                                <p><%=singleUserDetails[0].agent_id%></p>    
+                                                                        </div>
+                                                                        <label class="color-333 mt-3 bill-head">
+                                                                                Agent Contact Number:
+                                                                        </label>
+
+                                                                            <div class="hide-bor">
+                                                                                <p><%=singleUserDetails[0].contact_number%></p>    
+                                                                        </div>
+
+                                                                        
+                                                                            <label class="color-333 mt-3 bill-head">
+                                                                                Hospital District:
+                                                                        </label>
+                                                                        <div class="hide-bor">
+                                                                                <p><%=singleUserDetails[0].district %></p>    
+                                                                        </div>
+
+                                                                        <label class="color-333 mt-3 bill-head">
+                                                                            Hospital Name:
+                                                                    </label>
+                                                                    <div class="hide-bor">
+                                                                            <p><%=singleUserDetails[0].hospital_name%></p>    
+                                                                    </div>
+                                                                   
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+</div>

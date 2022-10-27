@@ -1,0 +1,62 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/hospital-side-menu.ejs",{activeLink:100}) %>
+
+                <div class="w-100 superadmin-rightsection p-4 p-lg-5">
+                        <div class="mb-4">
+                                <div class="color-000 pagename opensans-bold d-inline-block">
+                                       Users
+                                </div>
+                                
+                               
+                        </div>
+                        <div class="table-responsive">
+                                <table class="table table-hover border superadmin-table">
+                                        <thead>
+                                                <tr class="back-hos">
+                                                        <th scope="col" class="sr-num-1">S.No.</th>
+                                                        <th scope="col">created Date</th>
+                                                        <th scope="col">Arogya Pradhan Id</th>
+                                                        <th scope="col"> user First Name</th>
+                                                        <th scope="col"> user Last Name</th>
+                                                        <th scope="col">Mobile number</th>
+                                                        <th scope="col"> email Id</th>
+                                                        <th scope="col"> Zone</th>
+                                                        <th scope="col" class="sr-num-last"> Aadhar Number</th>
+                                                       
+                                                </tr>
+                                        </thead>
+
+                                        <tbody> 
+                                               
+                                               
+                                            <% for (var i = 0; i < usersList.length; i++) { %>
+                                               
+                                                <tr>
+                                                    <td class="mine-radius"><%= i+1; %></td>
+                                                    <td><%= newdate[i]; %></td>  
+                                                    <td><%= usersList[i].card_number; %></td>
+                                                    <td><%= usersList[i].first_name; %></td>
+                                                    <td><%= usersList[i].last_name; %></td>
+                                                    <td><%= usersList[i].mobile_no; %></td>
+                                                    <td><%= usersList[i].user_email_id; %></td>
+                                                    <td><%= usersList[i].district; %></td>
+                                                    <td><%= usersList[i].aadhar_no; %></td>
+                                                    
+                                                    
+                                                </tr>
+                                            <%}%>
+
+                                                
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+
+        </div>
+</div>
+ <script>
+        $('.superadmin-table').DataTable();
+</script>

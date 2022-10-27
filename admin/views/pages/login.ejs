@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arogya Pradhan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/custom2.css">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/css/jquery.mCustomScrollbar.min.css">
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+
+    <style>
+        .bg {
+            /* The image used */
+
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+
+        }
+
+        .gradient-custom {
+            /* fallback for old browsers */
+            /* background-image: url('/static/img/b2.jpg'); */
+            background-color: #eee;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .feedback-section {
+            height: 0;
+            position: fixed;
+            bottom: 0 !important;
+            background-color: #dc3545;
+            color: #ffffff;
+            text-align: center;
+            width: 100%;
+            left: 0;
+            z-index: 9999;
+        }
+
+        .feedback-section span:nth-child(1) {
+            line-height: 70px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong shadow" style="border-radius: 1rem;">
+                        <div class="card-body p-5">
+                            <img src="/static/img/logo.png" class="img-fluid image-wid">
+                            <div class="form-outline mb-4 mt-4 pt-4">
+                                <label style="font-family: sans-serif;" class="form-label label"
+                                    for="adminEmail">Email</label>
+                                <input type="email" id="adminEmail" class="form-control form-control-lg rounded-pill"
+                                    placeholder="Please enter your email.." />
+
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label style="font-family: sans-serif;" class="form-label label"
+                                    for="adminPassword">Password</label>
+                                <input type="password" id="adminPassword"
+                                    class="form-control form-control-lg rounded-pill"
+                                    placeholder="Please enter your password.." />
+
+                            </div>
+
+                            <!-- Checkbox -->
+                            <a href="/admin-login/forgot-password" class="btn-link mb-2 d-block text-right text-dark">Forgot
+                                password ?</a>
+
+                            <button class="btn btn-add-orange btn-lg btn-block" id="submit" style="
+                  font-family: sans-serif;
+              " type="submit">Login</button>
+
+                            <!-- <hr class="my-4"> -->
+
+                            <!-- <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
+                    type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+                  <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
+                    type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="feedback-section" id="feedbackSection"><span></span></div>
+    <script src="/static/js/jquery/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="/static/js/fontawesome.min.js"></script>
+    <script src="/static/js/fontawesome-all.min.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/global.js"></script>
+    <script>
+        $(document).ready(function () {
+            new WOW().init();
+            $('body').on('click', '#submit', function () {
+
+                var adminEmail = $('#adminEmail').val();
+                var adminPassword = $('#adminPassword').val();
+                if (adminEmail == "" || adminEmail == null) {
+                    messageDisplay("Please enter your email", 1500, "error");
+                    $("#adminEmail").focus();
+                    return false;
+                }
+                if (!emailExpr.test(adminEmail)) {
+                    messageDisplay("Please enter valid email", 1500, "error");
+                    $("#adminEmail").focus();
+                    return false;
+                }
+                if (adminPassword == "" || adminPassword == null) {
+                    messageDisplay("Please enter your password", 1500, "error");
+                    $("#adminPassword").focus();
+                    return false;
+                }
+                $.post('/admin-login/verfiy-login', {
+                    'email': adminEmail,
+                    'password': adminPassword
+                }, function (data) {
+                    if (data.success) {
+                        if (data.details.role == 0) {
+                            window.location.href = '/super-admin/customers';
+                        } else if (data.details.role == 1) {
+                            window.location.href = '/admin/districts';
+                        } else {
+                            window.location.href = '/agent/chat-window';
+                        }
+                    } else {
+                        messageDisplay(data.message, 1500, "error");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

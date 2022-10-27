@@ -1,0 +1,552 @@
+/* new css */
+
+/* table  {
+    border-collapse: separate !important;
+    border-spacing: 0 5px !important;
+    } */
+@font-face {
+    font-family: OpenSans-Regular;
+    src: local("OpenSans-Regular"),
+        local("OpenSans-Regular"),
+        url(../fonts/opensans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-SemiBold;
+    src: local("OpenSans-SemiBold"),
+        local("OpenSans-SemiBold"),
+        url(../fonts/opensans/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src: local("OpenSans-Bold"),
+        local("OpenSans-Bold"),
+        url(../fonts/opensans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Light;
+    src: local("OpenSans-Light"),
+        local("OpenSans-Light"),
+        url(../fonts/opensans/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Italic;
+    src: local("OpenSans-Italic"),
+        local("OpenSans-Italic"),
+        url(../fonts/opensans/OpenSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-fonts/Lato-Light.woff') format('woff'),
+        url('../fonts/lato-fonts/Lato-Light.woff2') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-fonts/Lato-Medium.woff2') format('woff2'),
+        url('../fonts/lato-fonts/Lato-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-fonts/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/lato-fonts/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-fonts/Lato-Italic.woff2') format('woff2'),
+        url('../fonts/lato-fonts/Lato-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato-fonts/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/lato-fonts/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.bg-blue{
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: unset;
+}
+/* .table thead th, .page-item.active a {
+    background-color: #3ea943!important;
+    padding: 15px 24px;
+} */
+.superadmin-rightsection .btn {
+    background-color: #3da943 !important;
+    position: relative;
+    top: -30px;
+    border-radius: 0px !important;
+    font-size: 18px;
+    left: 0px;
+    border-radius: 6px !important;
+    padding: 10px 65px;
+    border: none;
+    float: left;
+    font-family: 'Lato';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    color: #fff;
+}
+.superadmin-rightsection .btn:hover{
+    background-color:  #3da943 !important;
+}
+
+/* .table thead th:last-child, .table tbody td div:last-child{
+    text-align: right;
+} */
+/* .table td, .table th{
+    border-right: 1px solid #dee2e6;
+} */
+.table td:last-child, .table th:last-child{
+    border-right: 0px solid #dee2e6;
+}
+ .btn-dark:hover, 
+.btn-update:hover, #delete:hover, .btn-default:hover
+{background: olivedrab!important;
+    border-color: olivedrab;
+    color: #fff;}
+.admin_h{
+    min-height: 69px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.table td{
+    border-top: 0px !important;
+    border-left: 0px !important;
+}
+
+.custom-fullheight {
+    position: relative;
+    top: 71px;
+}
+.superadmin-rightsection{
+    position: absolute;
+    left: 250px;
+}
+.no-footer{margin-bottom: 40px;}
+.dropdown-menu-right a, div.dataTables_wrapper div.dataTables_length label, div.dataTables_wrapper div.dataTables_info{color: #000 !important;}
+.dropdown-menu-right{
+    padding: 0px; 
+    border-radius: 0px;
+    margin-top: 15px;
+}
+.dropdown-menu-right a{
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.dropdown-menu-right a:last-child{border-bottom: 0px;}
+.dropdown-menu-right a:hover{
+    background-color: olivedrab;
+    color: #fff !important;
+}
+.superadmin-sidenavbar .nav-item{
+    border-bottom: 1px solid #98989829;
+    margin: 0px;
+}
+.superadmin-sidenavbar .nav-item a {
+    padding: 12px 20px;
+    color: #333333;
+}
+.superadmin-sidenavbar{padding-top: 0px !important;position: fixed; top: 0px; z-index: 99;}
+
+.superadmin-sidenavbar .nav-item.active a, .superadmin-sidenavbar .nav-item:hover a{
+    color: black !important;
+    background: #e7f3e9;
+    /* font-size: 20px; */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    font-family: 'Lato';
+    border-left:5px solid #3da943 ;
+    content: '';
+}
+.superadmin-sidenavbar .nav-item.active, .superadmin-sidenavbar .nav-item:hover{border-bottom: 1px solid #98989829 !important;     background: unset;}
+/* .form-control, .page-link, .upload-files{border: 1px solid #0f59bd;} */
+.form-control-sm{height: calc(1.9em + 0.5rem + 2px);}
+div.dataTables_wrapper div.dataTables_filter input, 
+div.dataTables_wrapper div.dataTables_length select{border-radius: 50px;}
+#DataTables_Table_0_previous a{
+    /* border: 1px solid #0f59bd; */
+    border-radius: 50px 0 0 50px;
+}
+#DataTables_Table_0_next a{
+    /* border: 1px solid #0f59bd; */
+    border-radius: 0px 50px 50px 0;
+}
+.previous:hover, .next:hover{background-color: unset !important;}
+.pagination, .dataTables_info{margin-top: 15px !important;}
+.action-btn, .form-control, .btn-dark,  #file-upload, .btn-update{border-radius: 0px !important;}
+.action-btn:hover{background-color: olivedrab; color: #fff;}
+.btn-dark, .btn-update, #delete, .btn-default{
+    background-color: olivedrab;
+    color: #fff;
+    border-color: olivedrab;
+}
+.input-boxs {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%) !important;
+    padding: 50px;
+}
+.dropdown-menu-right{ box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%)}
+
+.btn-update, #delete, .btn-default{padding: .375rem 50px;}
+h3{color: #000; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+.form-label, .superadmin-label{color: #000; padding-left: 10px;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+.table td{
+    vertical-align: middle;
+    padding: 20px 20px !important; 
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 400;
+}
+.property-table .table td{
+    padding: 0.75rem 0.75rem !important;
+}
+td img{
+        width: 50px !important;
+        height: 50px;
+        object-fit: cover;
+}
+.page-item.active .page-link{border-color: olivedrab;}
+.form-control:focus{box-shadow: none;}
+.modal.show .modal-dialog {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+}
+.form-control-lg{font-size: 1rem;}
+.navbar-brand
+{font-size: 25px !important; 
+color: #fff !important; 
+margin-right: 0px !important;
+}
+.btn-update{    margin-top: 20px;}
+#saveCategory{margin-top: 0px !important;}
+.action-btn{color: olivedrab;}
+
+
+
+
+
+
+
+
+
+.image-wid {
+    position: relative;
+    left: 50px;
+    width: 75%;
+}
+.label {
+    font-size: 23px;
+    color: black;
+    margin-bottom: 3px;
+}
+.for-pass{
+    font-size: 28px;
+}
+.form-control{
+    border-radius: 10px !important;
+}
+
+
+.sortac{
+    border-top-right-radius: 11px !important;
+}
+.border-bot-bill{
+    border-bottom-left-radius: 15px !important;
+    /* background-color: #fff; */
+    border-top-left-radius: 20px;
+}
+.border{
+    border: none !important;
+}
+/* .borleft{
+    border-left: 5px solid #f2683c !important;
+} */
+ 
+.ad-mine:hover{
+    background: #ffd3c5 !important;
+    border-left: 3px solid #f2683c !important;
+    }
+    .superadmin-sidenavbar1 .nav-item a {
+        padding: 12px 20px;
+        color: #333333;
+    }
+    .superadmin-sidenavbar1{padding-top: 0px !important;position: fixed; top: 0px; z-index: 99;}
+    
+    .superadmin-sidenavbar1 .nav-item.active a, .superadmin-sidenavbar1 .nav-item:hover a {
+        color:  #f2683c  !important;
+        fill:#f2683c ;
+        background: #ffede4 !important;
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        font-family: 'Lato';
+        border-left: 3px solid #f2683c !important;
+        content: '';
+    }
+    .superadmin-sidenavbar1 .nav-item:hover a .bi-building:hover,.superadmin-sidenavbar1 .nav-item:hover a .sub-name {
+        color:  #f2683c  !important;
+        fill:#f2683c ;
+        background: #ffede4 !important;
+    }
+
+    
+        .receipts-bill1:hover {
+        filter: none;
+          filter: grayscale(0);
+          transform: scale(1.01);
+          color:  #f2683c  !important;
+        }
+   
+
+
+    .superadmin-sidenavbar1 .nav-item.active, .superadmin-sidenavbar1 .nav-item:hover{border-bottom: 1px solid #98989829 !important;     background: unset;}
+    /* .form-control, .page-link, .upload-files{border: 1px solid #0f59bd;} */
+    .form-control-sm{height: calc(1.9em + 0.5rem + 2px);}
+    div.dataTables_wrapper div.dataTables_filter input, 
+    div.dataTables_wrapper div.dataTables_length select{border-radius: 50px;}
+    #DataTables_Table_0_previous a{
+        /* border: 1px solid #0f59bd; */
+        border-radius: 50px 0 0 50px;
+    } 
+
+    .mine-sec .btn {
+        background-color: #f2683c !important;
+        position: relative;
+        top: -30px;
+        border-radius: 0px !important;
+        font-size: 18px;
+        left: 0px;
+        border-radius: 6px !important;
+        padding: 8px 20px;
+        border: none;
+        float: left;
+        font-family: 'Lato';
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        color: #fff;
+    }
+    
+    .mine-sec .btn:hover{
+          background-color: #f2683c !important;
+    }
+
+    .table thead th, .page-item.active a .change-color{
+        background-color:#f2683c !important;
+        padding: 15px 24px;
+    }
+.sr-num-1{
+    border-top-left-radius: 11px !important;
+}
+
+.sr-num-last{
+border-top-right-radius: 11px !important;
+}
+.mine-radius{
+    border-bottom-left-radius: 11px !important;
+    border-top-left-radius: 11px !important;
+}
+.mine-radius-right{
+    border-bottom-right-radius: 11px !important;
+    border-top-right-radius: 11px !important;
+}
+.leftside{
+    float: center !important;
+}
+.dist-border{
+    border-top-left-radius: 11px;
+}
+.dist-border-1{
+    border-top-right-radius: 11px;
+    text-align: justify;
+    
+}
+.border-bottom-dist-left{
+    border-bottom-left-radius: 11px;
+    border-top-left-radius: 11px;
+}
+.border-bottom-dist-right{
+    border-bottom-right-radius: 11px;
+    border-top-right-radius: 11px;
+}
+.agent-bor{
+    border-top-left-radius: 11px;
+}
+.agent-bor1{
+    border-top-right-radius: 11px;
+}
+.text-underline-hover{
+    border: none;
+    background-color: snow;
+}
+.btn-update{
+        background-color: #f2683c!important;
+        position: relative;
+        /* top: -30px; */
+        border-radius: 0px !important;
+        font-size: 18px;
+        left: 0px;
+        border-radius: 6px !important;
+        padding: 7px 25px;
+        border: none;
+        float: left;
+        font-family: 'Lato';
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        color: #fff;
+    }
+    .btn-update1{
+        background-color: #f2683c!important;
+        position: relative;
+        /* top: -30px; */
+        border-radius: 0px !important;
+        font-size: 18px;
+        left: 0px;
+        border-radius: 6px !important;
+        padding: 7px 25px;
+        border: none;
+        float: left;
+        font-family: 'Lato';
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        color: #fff;
+        margin-top: 0px !important;
+    }
+    .btn-update:hover{
+        background-color: #ff4000!important;
+        border: none;
+        outline: none;
+    }
+
+    button:focus {
+        outline: 1px dotted;
+        outline: none;
+    }
+    .modal-title{
+        font-family: 'Lato';
+        font-weight: normal;
+        font-style: normal;
+        color: #000;
+        font-size: 29px;
+        position: relative;
+    top: 50px;
+    }
+    .modal-content {
+        position: relative;
+        /* display: flex; */
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 0.3rem;
+        outline: 0;
+        background-color: white;
+        /* background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%); */
+        color: black;
+    }
+    .modal-header {
+        display: initial !important;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+        border-bottom: none !important;
+        border-top-left-radius: calc(0.3rem - 1px);
+        border-top-right-radius: calc(0.3rem - 1px);
+    }
+    .icon-wrong{
+        position: relative;
+        top: -34px;
+    }
+    table {
+        border-collapse: collapse; /* [1] */
+     }
+     
+     th, td {
+       border-bottom: 1px solid rgb(230, 230, 230); /* [2] */
+     }
+     /* .table thead th, .page-item.active a  .back-color-hospital {
+        background-color:#57a84c!important;
+        padding: 15px 24px;
+    } */
+
+    .sub-name-hospital{
+        font-weight: bold;
+        margin-left: 8px;
+        font-size: 18px;
+        vertical-align: middle;
+       }
+   
+    .superadmin-sidenavbar .nav-item.active a, .superadmin-sidenavbar .nav-item:hover a {
+        color:#57a84c!important;
+        fill:#57a84c!important;
+        background:  #e7f3e9 !important;
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        font-family: 'Lato';
+        border-left: 3px solid #57a84c !important;
+        content: '';
+    }
+     .table thead th, .page-item.active a  .back-hos{
+    background-color: #3ea943!important;
+    padding: 15px 24px;
+ }  
+ .table thead th, .page-item.active a  .back-color-hospital{
+    background-color: #f2683c!important;
+    padding: 15px 24px;
+ } 
+ .btn-add-orange{
+    background-color: #f2683c!important;
+    border-color: #f2683c!important;
+    border-radius: 5px;
+    color: white !important;
+ }
+ .btn-add-orange1{
+    background-color: #f2683c!important;
+    border-color: #f2683c!important;
+    border-radius: 5px;
+    color: white !important;
+    width: 100%;
+ }
+ .btn-add-orange:hover{
+    background-color: #f2683c!important;
+    border-color: #f2683c!important;
+    border-radius: 5px;
+    color: white !important;
+ }
+ .btn-add-orange1:hover{
+    background-color: #f2683c!important;
+    border-color: #f2683c!important;
+    border-radius: 5px;
+    color: white !important;
+    width: 100%;
+ }

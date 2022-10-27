@@ -1,0 +1,119 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/admin-side-menu.ejs",{activeLink:100}) %>
+                <div class="w-100 superadmin-rightsection p-5 mob-p">
+                        <div class="color-000 pagename opensans-bold mb-4">
+                                <a class="pointer" href="../billing"><img src="/static/img/back.png" class="img-fluid">
+                                          User Details With Bill</a>
+                        </div>
+                        <div class="row">
+                                <div class="col-xxl-5 col-xl-12  col-lg-12 col-md-12 col-sm-12">
+                                                <div class="row">
+                                                        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                <div class="shadow-none mb-5 bg-white rounded p-5">
+                                                                        <h1 class="use-detail">User Details</h1>
+                                                                <div class="row">
+                                                                        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                                <label class="color-333  mt-4 bill-head">
+                                                                                        First Name:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                    <p><%= userWithBillDetails[0].first_name%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333  mt-3 bill-head">
+                                                                                        Mobile Number:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%= userWithBillDetails[0].mobile_no%></p>    
+                                                                                </div>
+
+                                                                                <label class="color-333  mt-3 bill-head">
+                                                                                        Zone:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%= userWithBillDetails[0].district%></p>    
+                                                                                </div>
+                                                                                <label class="color-333  mt-3 bill-head">
+                                                                                        Aarogya Pradhan Id:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%= userWithBillDetails[0].card_number%></p>    
+                                                                                </div>
+                                                                                </div>
+
+                                                                                <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                                        <label class="color-333 mt-3 bill-head">
+                                                                                                Last Name:
+                                                                                        </label>
+                                                                                        <div class="hide-bor">
+                                                                                                <p><%= userWithBillDetails[0].last_name%></p>    
+                                                                                        </div>
+                                                                                        
+                                                                                        <label class="color-333  mt-3 bill-head">
+                                                                                                Email Id:
+                                                                                        </label>
+                                                                                        <div class="hide-bor">
+                                                                                                <p><%= userWithBillDetails[0].user_email_id%></p>    
+                                                                                        </div>
+                                                                             
+
+                                                                                <label class="color-333  mt-3 bill-head">
+                                                                                        Aadhar Number:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%= userWithBillDetails[0].aadhar_no%></p>    
+                                                                                </div>
+                                                                                   </div>
+                                                                                   </div>
+                                                                                   </div>
+                                                                                   </div>
+                                                                                   <div class="row shadow-none mb-5 bg-white rounded p-5 myside-view">
+                                                                                   <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0">
+                                                                                        <label class="color-333  mt-3 hide-bor">
+                                                                                                Bill Image:
+                                                                                        </label>
+                                                                                        <div class="">
+                                                                                                <img src="/static/<%= userWithBillDetails[0].bill_image; %>"
+                                                                                                 style="width: 75px;">    
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-12 mb-4 mb-lg-0 mypad-view">
+                                                                                <label class="color-333  mt-3 bill-head">
+                                                                                        Bill Number:
+                                                                                </label>
+                                                                                <div class="hide-bor">
+                                                                                        <p><%= userWithBillDetails[0].bill_number%></p>    
+                                                                                </div>
+    
+
+                                                                            <label class="color-333  mt-3 bill-head">
+                                                                                Bill Amount:
+                                                                        </label>
+                                                                        <div class="hide-bor">
+                                                                                <p><%= userWithBillDetails[0].bill_amount%></p>    
+                                                                        </div>
+
+                                                                    
+                                                                   
+                                                                <label class="color-333  mt-3 bill-head">
+                                                                   Payable Amount:
+                                                            </label>
+                                                            <div class="hide-bor">
+                                                                    <p><%= userWithBillDetails[0].payable_amount%></p>    
+                                                            </div>
+
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                                </div>
+                                        
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+</div>

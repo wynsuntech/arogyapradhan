@@ -1,0 +1,63 @@
+<%- include ("../../partials/head.ejs") %>
+
+<div class="custom-fullheight">
+        <div class="d-lg-flex min-h-full">
+                <%- include ("../../partials/hospital-side-menu.ejs",{activeLink:104}) %>
+
+                <div class="w-100 superadmin-rightsection p-4 p-lg-5">
+                        <div class="mb-4">
+                                <div class="color-000 pagename opensans-bold d-inline-block">
+                                        Commission's
+                                </div>
+                                
+                        </div>
+                        <div class="table-responsive">
+                                <table class="table table-hover border superadmin-table">
+                                        <thead>
+                                                <tr>
+                                                        <th scope="col">S.No.</th>
+                                                        <th scope="col">Received Date</th>
+                                                        <th scope="col">Arogya Pradhaan ID</th>
+                                                       
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Reference ID</th>
+                                                        <th scope="col">Commission ID</th>
+                                                </tr>
+                                        </thead>
+
+                                        <tbody>
+                                               
+                                                <% for (var i = 0; i < hospitalCommission.length; i++) { %>
+                                                   
+                                                    <tr>
+                                                        <td><%= i+1; %></td>
+                                                        
+                                                        <td><%=newdate[i] %></td>
+                                                        <td><%= hospitalCommission[i].card_number; %></td> 
+                                                        <td><%= hospitalCommission[i].hospital_commission; %></td>
+                                                        <td><%= hospitalCommission[i].hospital_ref; %></td>
+                                                        <td><%= hospitalCommission[i].commission_gen_id; %></td>
+                                                         
+                                                       
+                                                       
+                                                       
+                                                    </tr>
+    
+                                                    <% } %>
+                                                   
+                                            </tbody>
+
+
+                                        
+                                        
+
+                                </table>
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+<script>
+    $('.superadmin-table').DataTable();
+</script>

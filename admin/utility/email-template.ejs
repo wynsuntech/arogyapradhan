@@ -1,0 +1,211 @@
+<% if(emailTemplate=='reset-password') { %>
+    <html><head><title>Reset password OTP</title></head>
+    <body style="background:#ccc;">
+        <table style="width:90%; font-family:verdna; font-size:14px;border:solid 1px #dadada;background:#fff; margin:10px auto;">
+            <tr>
+                <td style="height:78px; width:2%;"></td>
+                <td style="height:78px; width:96%;"><a href=""><img src="<%= baseUrl %>/static/img/logo.png" style="width:200px;border:none; display: block;margin: 0 auto"></a></td>
+                <td style="height:78px; width:2%;"></td>
+            </tr>
+            <tr>
+                <td style="height:8px; width:2%;"></td>
+                <td style="height:8px; width:96%;"></td>
+                <td style="height:8px; width:2%;"></td>
+            </tr>
+            <tr>
+                <td style="width:2%;"></td>
+                <td style="width:96%;">Greetings  <%= name %>,
+                </td>
+                <td style="width:2%;"></td>
+            </tr>
+            <tr>
+                <td style="height:8px; width:2%;"></td>
+                <td style="height:8px; width:96%;"></td>
+                <td style="height:8px; width:2%;"></td>
+            </tr>
+            <tr>
+                <td style="height:8px; width:2%;"></td>
+                <td style="height:8px; width:96%;"></td>
+                <td style="height:8px; width:2%;"></td>
+            </tr>
+            <tr>
+                <td style="width:2%;"></td>
+                <td style="width:96%;">Your One Time Password (OTP) for Reset Soldan is.
+                </td>
+                <td style="width:2%;"></td>
+            </tr>
+            <tr>
+                <td style="height:8px; width:2%;">&nbsp;</td>
+                <td style="height:8px; width:96%;"><%= otp %></td>
+                <td style="height:8px; width:2%;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="width:2%;"></td>
+
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">-Soldan
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+            <td style="height:8px; width:96%;">&nbsp;</td>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;border-top:solid 1px #dadada;"><table>
+                <tr>
+                    <td style="width:90%; font-size:14px;">&copy;  All rights reserved. &reg;</td>
+                    <td style="width:10%;"><table style="width:100%;">
+                    </table>
+                    </td>
+                    <td style="width:2%;"></td>
+                </tr>
+            </table>
+    </body>
+
+</html><% } else if(emailTemplate=='send-payment-link') { %>
+    <html><head><title>Payment Link</title></head>
+    <body style="background:#ccc;">
+    <table style="width:90%; font-family:verdna; font-size:14px;border:solid 1px #dadada;background:#fff; margin:10px auto;">
+        <tr>
+            <td style="height:78px; width:2%;"></td>
+            <td style="height:78px; width:96%;"><a href=""><img src="/static/img/logo_new.png" style="width:200px;border:none; display: block;margin: 0 auto"></a></td>
+            <td style="height:78px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;"></td>
+            <td style="height:8px; width:96%;"></td>
+            <td style="height:8px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">Greetings  <%= name %>,
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;"></td>
+            <td style="height:8px; width:96%;"></td>
+            <td style="height:8px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;"></td>
+            <td style="height:8px; width:96%;"></td>
+            <td style="height:8px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">Payment have to done click below.
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+            <td style="height:8px; width:96%;"><a href="<%= emailLink %>" style="cursor: pointer;color: #1da1f2">Click Here</a></td>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">-Duvim Chat
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+            <td style="height:8px; width:96%;">&nbsp;</td>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;border-top:solid 1px #dadada;"><table>
+                    <tr>
+                        <td style="width:90%; font-size:14px;">&copy;  All rights reserved. &reg;</td>
+                        <td style="width:10%;"><table style="width:100%;">
+                            </table>
+                        </td>
+                        <td style="width:2%;"></td>
+                    </tr>
+                </table>
+    </body>
+
+    </html><% } else if(emailTemplate=='send-otp') { %>
+    <html><head><title>Reset password OTP</title></head>
+    <body style="background:#ccc;">
+    <table style="width:90%; font-family:verdna; font-size:14px;border:solid 1px #dadada;background:#fff; margin:10px auto;">
+        <tr>
+            <td style="height:78px; width:2%;"></td>
+            <td style="height:78px; width:96%;"><a href=""><img src="/static/img/logo_new.png" style="width:200px;border:none; display: block;margin: 0 auto"></a></td>
+            <td style="height:78px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;"></td>
+            <td style="height:8px; width:96%;"></td>
+            <td style="height:8px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">Greetings  <%= name %>,
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;"></td>
+            <td style="height:8px; width:96%;"></td>
+            <td style="height:8px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;"></td>
+            <td style="height:8px; width:96%;"></td>
+            <td style="height:8px; width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">Your One Time Password (OTP) for Reset Soldan is.
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+            <td style="height:8px; width:96%;"><%= otp %></td>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;">-Duvim Chat
+            </td>
+            <td style="width:2%;"></td>
+        </tr>
+        <tr>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+            <td style="height:8px; width:96%;">&nbsp;</td>
+            <td style="height:8px; width:2%;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td style="width:96%;border-top:solid 1px #dadada;"><table>
+                    <tr>
+                        <td style="width:90%; font-size:14px;">&copy;  All rights reserved. &reg;</td>
+                        <td style="width:10%;"><table style="width:100%;">
+                            </table>
+                        </td>
+                        <td style="width:2%;"></td>
+                    </tr>
+                </table>
+    </body>
+
+    </html><% } %>
